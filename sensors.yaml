@@ -1,0 +1,31 @@
+### Sensors ###
+
+# Weather Forecast
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+
+# Time & Date
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+
+# Living Room TV
+#- platform: template
+#  sensors:
+#    living_room_harmony:
+#      value_template: '{{
+#states.remote.lrtv.attributes.current_activity }}'
+#      friendly_name: "Living Room"
+
+- platform: octoprint
+  name: OctoPrint
+  monitored_conditions:
+  - Current State
+  - Temperatures
+  - Job Percentage

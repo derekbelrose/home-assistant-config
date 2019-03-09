@@ -1,0 +1,8 @@
+media_players:
+  entities:
+    - media_player.family_room
+    - media_player.playbar
+    - media_player.office
+    - media_player.bedroom_sonos
+    - media_player.bathroom_sonos
+    - media_player.gabes_room

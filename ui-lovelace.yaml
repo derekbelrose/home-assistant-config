@@ -1,0 +1,95 @@
+title: 7 Sylvan Park Ct
+views:
+  - icon: mdi:home-assistant
+    title: Home
+    path: home
+    theme: dark-mode
+    cards:
+    - type: glance
+      title: People
+      entities:
+        - person.dawn
+        - person.derek
+    - type: entities
+      entities:
+        - sensor.date_time
+    - type: glance
+      entities:
+        - sensor.dark_sky_summary
+    - type: entities
+      title: Lights
+      show_header_toggle: false
+      entities:
+        - group.basement
+        - group.living_room_lights
+
+#   - title: living room
+#     path: living_room
+#     cards:
+#       - type: entities
+#         title: Lights
+#         show_header_toggle: true
+#         entities:
+#           - light.peanut_butter        
+#           - light.jelly
+#       - type: vertical-stack
+#         title: Media
+#         cards:
+#           - type: sensor
+#             entity: sensor.living_room_harmony
+#             graph: none
+
+#           - type: custom:mini-media-player
+#             entity: media_player.family_room
+#             icon: mdi:speaker
+#             show_source: true
+#             show_progress: true
+#             idle_view: true
+
+#           - type: custom:mini-media-player
+#             entity: media_player.playbar
+#             icon: mdi:speaker
+#             show_source: true
+#             show_progress: true
+#             idle_view: true
+
+#   - title: Upstairs
+#     path: upstairs
+#     cards:
+#       - type: vertical-stack
+#         show_header_toggle: false
+#         cards:
+#           - type: markdown
+#             content: Master Bedroom
+#           - type: glance
+#             entities:
+#               - entity: switch.master_bedroom_fan
+#                 tap_action:
+#                   action: toggle
+#                 name: Fan
+#           - type: custom:mini-media-player
+#             entity: media_player.bedroom_sonos
+#             icon: mdi:speaker
+#             show_source: true
+#             show_progress: true
+#             idle_view: true
+#       - type: custom:mini-media-player
+#         entity: media_player.gabes_room
+#         icon: mdi:speaker
+#         show_source: true
+#         show_progress: true
+#         idle_view: true
+#       - type: custom:mini-media-player
+#         entity: media_player.bathroom_sonos
+#         icon: mdi:speaker
+#         show_source: true
+#         show_progress: true
+#         idle_view: true
+#   - title: Media
+#     path: Media
+#     cards:
+#       - type: entities
+#         title: Media
+#         show_header_toggle: false
+#         entities:
+#           - group.media_players

@@ -1,0 +1,8 @@
+Living Room lights:
+  entities:
+    - light.LR_Lower
+    - light.LR_Upper
+
+Basement:
+  entities:
+    - light.ofc_1

@@ -1,0 +1,15 @@
+sensor.octoprint_actual_bed_temp:
+  unit_of_measurement: "ºC"
+sensor.octoprint_target_bed_temp:
+  unit_of_measurement: "ºC"
+sensor.octoprint_actual_tool0_temp:
+  unit_of_measurement: "ºC"
+sensor.octoprint_target_tool0_temp:
+  unit_of_measurement: "ºC"
+
+light.LR_Upper:
+        friendly_name: "Peanut Butter"
+light.LR_Lower:
+        friendly_name: "Jelly"
+light.ofc_1:
+        friendly_name: "Office Desk"

@@ -1,0 +1,16 @@
+secrets.yaml
+eero.session
+plex.conf
+.*DS_Store
+._*.yaml
+.storage
+.cloud
+.homekit.state
+.ios.conf
+.uuid
+icloud/
+*.log
+*.db
+
+deps/
+known_devices.yaml

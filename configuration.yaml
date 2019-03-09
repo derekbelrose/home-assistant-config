@@ -1,0 +1,135 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 337
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+  auth_mfa_modules:
+    - type: totp
+
+lovelace:
+ mode: yaml
+
+homekit:
+    filter:
+        include_domains:
+            - light
+            - media_player
+
+weather:
+ - platform: darksky
+   api_key: !secret darksky_api_key
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  base_url: belrose.duckdns.org:8123
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - plex_mediaserver
+    - philips_hue  
+    - harmony
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+hue:
+  bridges:
+    - host: 10.254.2.184
+      allow_hue_groups: False
+      allow_unreachable: False
+# Enable Wemo Devices
+wemo:
+
+# Sensors
+sensor: !include sensors.yaml
+
+# Text to speech
+tts:
+  - platform: google
+
+# Notifications to PushBullet
+notify:
+  - platform: pushsafer
+    private_key: !secret pushsafer_private_key
+
+# Cloud
+cloud:
+  alexa:
+    filter:
+      include_domains:
+        - light
+        - switch
+        - sensor
+        - climate
+        - lock
+      include_entities:
+        - switch.master_bedroom_fan
+    entity_config:
+      light.LR_Upper:
+        name: Peanut Butter
+      light.LR_Lower:
+        name: Jelly
+      light.ofc_1:
+        name: Office Desk
+ios:
+
+panel_iframe:
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: http://hassio.local:8321
+  ssh:
+    title: Terminal
+    icon: mdi:console
+    url: https://hassio.local:7681/
+
+camera:
+  - platform: mjpeg
+    name: OctoPrint
+    still_image_url: http://10.254.2.108/webcam/?action=snapshot
+    mjpeg_url: http://10.254.2.108/webcam/?action=stream
+
+device_tracker:
+  - platform: eero_tracker
+    consider_home: 300
+    interval_seconds: 60
+    only_macs: "9c:e6:5e:d1:17:8b, e0:33:8e:32:e1:5e, b8:41:a4:ba:fc:50"
+
+water_heater:
+  - platform: demo
+
+system_health:     
+group: !include_dir_merge_named group
+automation: !include automations.yaml
+person: !include family-members.yaml

@@ -1,0 +1,11 @@
+- name: Derek
+  id: derek47778
+  user_id: 9db608b334d84dd095db72934f17aa7d
+  device_trackers:
+    - device_tracker.derek_iphone_xs
+
+
+- name: Dawn
+  id: dawn083180
+  device_trackers:
+    - device_tracker.dawn_iphone_8
