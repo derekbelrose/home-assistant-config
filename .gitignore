@@ -11,6 +11,7 @@ plex.conf
 icloud/
 *.log
 *.db
+options.xml
 
 deps/
 known_devices.yaml
